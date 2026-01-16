@@ -1,4 +1,4 @@
-from langchain.text_splitter import CharacterTextSplitter, RecursiveCharacterTextSplitter
+from langchain_text_splitter import CharacterTextSplitter, RecursiveCharacterTextSplitter
 
 tesla_text = """Tesla's Q3 Results
 
@@ -15,4 +15,8 @@ Supply chain issues caused a 12% increase in production costs.
 This is one very long paragraph that definitely exceeds our 100 character limit and has no double newlines inside it whatsoever making it impossible to split properly."""
 
 
-print('Ayush')
+splitter1 = CharacterTextSplitter(
+    # separator=" ",  # Default separator. Other options include ["\n\n", "\n", ". ", " ", ""]
+    chunk_size=100,
+    chunk_overlap=0
+)
