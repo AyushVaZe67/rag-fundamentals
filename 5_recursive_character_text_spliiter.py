@@ -20,3 +20,9 @@ splitter1 = CharacterTextSplitter(
     chunk_size=100,
     chunk_overlap=0
 )
+
+chunks1 = splitter1.split_text(tesla_text)
+for i, chunk in enumerate(chunks1, 1):
+    print(f"Chunk {i}: ({len(chunk)} chars)")
+    print(f'"{chunk}"')
+    print()
