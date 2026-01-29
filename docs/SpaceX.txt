@@ -1,23 +1,4 @@
-﻿SpaceX 
-Space Exploration Technologies Corp., commonly Space Exploration Technologies
-referred to as SpaceX, is an American space Corp.
-technology company headquartered at the Starbase
-development site in Starbase, Texas.[10] Since its
-founding in 2002, the company has made numerous
-advances in rocket propulsion, reusable launch
-vehicles, human spaceflight and satellite
-constellation technology. As of 2025, SpaceX is the
-world's dominant space launch provider, its launch
-cadence eclipsing all others, including private
-competitors and national programs like the Chinese
-space program.[11] SpaceX, NASA, and the United
-States Armed Forces work closely together by
-means of governmental contracts.[12]
-
-SpaceX was founded by Elon Musk in 2002 with a Company headquarters, SpaceX Starbase in
-
-vision of decreasing the costs of space launches, Starbase, Texas
-
+﻿
 paving the way to a self-sustaining colony on Mars. Trade name SpaceX
 In 2008, Falcon 1 successfully launched into orbit Company type Private
 after three failed launch attempts. The company then Industry Space
