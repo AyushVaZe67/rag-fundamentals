@@ -1,53 +1,5 @@
 ﻿Nvidia 
-Nvidia Corporation[a] (/ɛnˈvɪdiə/ en-VID-ee-ə) is an Nvidia Corporation
-American technology company headquartered in
-Santa Clara, California. Founded in 1993 by Jensen
-Huang (president and CEO), Chris Malachowsky, and
-Curtis Priem, it develops graphics processing units
-
-Logo used since 2006
-(GPUs), systems on chips (SoCs), and application
-programming interfaces (APIs) for data science, high-
-performance computing, and mobile and automotive
-applications.[5][6]
-
-Originally focused on GPUs for video gaming, Nvidia
-broadened their use into other markets, including
-artificial intelligence (AI), professional visualization,
-and supercomputing. The company's product lines
-include GeForce GPUs for gaming and creative
-workloads, and professional GPUs for edge Headquarters in Santa Clara, California, in 2023
-computing, scientific research, and industrial
-applications. As of the first quarter of 2025, Nvidia Company Public
-
-held a 92% share of the discrete desktop and laptop type
-
-GPU market.[7][8] Traded as Nasdaq: NVDA (https://www.n
-asdaq.com/market-activity/sto
-
-In the early 2000s, the company invested over a cks/nvda)
-billion dollars to develop CUDA, a software platform Nasdaq-100 component
-and API that enabled GPUs to run massively parallel DJIA component
-programs for a broad range of compute-intensive S&P 100 component
-applications.[9][10][11] As a result, as of 2025, Nvidia S&P 500 component
-controlled more than 80% of the market for GPUs
-
-Industry Semiconductors
-used in training and deploying AI models,[9] and
-provided chips for over 75% of the world's TOP500 Founded April 5, 1993, in Sunnyvale,
-
-California, U.S.
-supercomputers.[1] The company has also expanded
-into gaming hardware and services, with products Founders Jensen Huang
-
-such as the Shield Portable, Shield Tablet, and Shield Chris Malachowsky
-TV, and operates the GeForce Now cloud gaming Curtis Priem
-service.[12] It also developed the Tegra line of mobile Headquarters Santa Clara, California, U.S.
-processors for smartphones, tablets, and automotive Area served Worldwide
-infotainment systems.[13][14][15]
-
-Key people Jensen Huang (president and
-In 2023, Nvidia became the seventh U.S. company to CEO)
+Nvidia 
 
 reach a US$1 trillion valuation.[16] In 2025, it became Bill Dally (chief scientist)
 the first to surpass US$4 trillion in market Revenue  US$130.5 billion (FY25)
