@@ -1,4 +1,4 @@
-8﻿Google
+﻿Google
 Google LLC (/ˈɡuːɡəl/ ⓘ , GOO-gəl) is an Google LLC
 American multinational corporation and technology
 company focusing on online advertising, search engine
@@ -8,7 +8,7 @@ electronics, and artificial intelligence (AI).[9] It has
 been referred to as "the most powerful company in the The Google logo used since 2015
 world" by the BBC[10] and is one of the world's most
 valuable brands.[11][12][13] Google's parent company,
-Alphabet Inc., is one of the five Big Tech companies 
+Alphabet Inc., is one of the five Big Tech companies
 alongside Amazon, Apple, Meta, and Microsoft.
 
 Google was founded on September 4, 1998, by
@@ -224,6 +224,7 @@ from Kleiner Perkins. He had been trying to find a CEO that Sergey Google's firs
 server[60]
 and Larry would accept for several months, but they rejected several
 candidates because they wanted to retain control over the company.
+
 
 
 Michael Moritz from Sequoia Capital at one point even menaced requesting Google to immediately pay
