@@ -39,3 +39,128 @@ for i, chunk in enumerate(chunks, 1):
     print(f"{i}. {chunk}")
 
 print("\n" + "="*80)
+
+print("Setting up Vector Retriever...")
+embedding_model = OpenAIEmbeddings(model="text-embedding-3-small")
+vectorstore = Chroma.from_documents(
+    documents=documents,
+    embedding=embedding_model,
+    collection_metadata={"hnsw:space": "cosine"}
+)
+
+vector_retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
+
+# Test semantic search
+test_query = "space exploration company" #works in vector search but wouldn't work with keyword search
+
+print(f"Testing: '{test_query}'")
+test_docs = vector_retriever.invoke(test_query)
+for doc in test_docs:
+    print(f"Found: {doc.page_content}")
+
+
+# 2. BM25 Retriever (Keyword Search)
+print("Setting up BM25 Retriever...")
+bm25_retriever = BM25Retriever.from_documents(documents)
+bm25_retriever.k = 3
+
+
+# Test exact keyword matching
+# test_query = "space exploration company"
+test_query = "Cybertruck"
+# test_query = "Tesla"
+
+print(f"Testing: '{test_query}'")
+test_docs = bm25_retriever.invoke(test_query)
+for doc in test_docs:
+    print(f"Found: {doc.page_content}")
+
+
+
+#  3. Hybrid Retriever (Combination)
+print("Setting up Hybrid Retriever...")
+hybrid_retriever = EnsembleRetriever(
+    retrievers=[vector_retriever, bm25_retriever],
+    weights=[0.7, 0.3]  # Equal weight to vector and keyword search
+)
+
+print("Setup complete!\n")
+
+# Query 1: Mixed semantic and exact terms
+
+# Vector search understands "purchase cost" semantically
+# BM25 search finds exact "7.5 billion"
+# Hybrid should combine both strengths for best result
+test_query = "purchase cost 7.5 billion"
+
+retrieved_chunks = hybrid_retriever.invoke(test_query)
+for i, doc in enumerate(retrieved_chunks, 1):
+    print(f"{i}. {doc.page_content}")
+print()
+
+print("Query 1 shows how hybrid finds exact financial info using both semantic understanding and keyword matching")
+
+
+# Query 2: Semantic concept + specific product name
+
+# Vector search understands "electric vehicle manufacturing"
+# BM25 search finds exact "Cybertruck"
+# Hybrid gets the best of both worlds
+
+test_query = "electric vehicle manufacturing Cybertruck"
+
+retrieved_chunks = hybrid_retriever.invoke(test_query)
+
+for i, doc in enumerate(retrieved_chunks, 1):
+    print(f"{i}. {doc.page_content}")
+print()
+
+print("Query 2 demonstrates combining product-specific terms with broader concepts")
+
+
+# Query 3: Where neither alone would be perfect
+
+# "Company performance" is semantic, "Tesla" is exact keyword
+# Hybrid should find the most relevant Tesla performance info
+
+test_query = "company performance Tesla"
+
+retrieved_chunks = hybrid_retriever.invoke(test_query)
+for i, doc in enumerate(retrieved_chunks, 1):
+    print(f"{i}. {doc.page_content}")
+print()
+
+print("Query 3 shows how hybrid handles mixed semantic/keyword queries better than either approach alone")
+
+
+# Combine the query and the relevant document contents
+from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_openai import ChatOpenAI
+
+
+combined_input = f"""Based on the following documents, please answer this question: {test_query}
+
+Documents:
+{chr(10).join([f"- {doc.page_content}" for doc in retrieved_chunks])}
+
+Please provide a clear, helpful answer using only the information from these documents. If you can't find the answer in the documents, say "I don't have enough information to answer that question based on the provided documents."
+"""
+
+# Create a ChatOpenAI model
+model = ChatOpenAI(model="gpt-4o")
+
+# Define the messages for the model
+messages = [
+    SystemMessage(content="You are a helpful assistant."),
+    HumanMessage(content=combined_input),
+]
+
+# Invoke the model with the combined input
+result = model.invoke(messages)
+
+# Display the full result and content only
+print("\n--- Generated Response ---")
+# print("Full result:")
+# print(result)
+print("Content only:")
+print(result.content)
